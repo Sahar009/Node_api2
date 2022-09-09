@@ -2,8 +2,24 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/users', (req, res) => {
-    res.send('Hello');
+const users =[
+    {
+        firstName: "sahar",
+        lastName: "skilinbidi",
+        age: 22
+    },
+
+    {
+        firstName: "thomas",
+        lastName: "muller",
+        age: 22
+    }
+]
+
+router.get('/', (req, res) => {
+    console.log(users);
+
+    res.send(users); 
 });
 
 export default router;

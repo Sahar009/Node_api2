@@ -1,4 +1,4 @@
-import  express  from "express";
+import  express, { response }  from "express";
 import bodyParser from 'body-parser';
 import usersRoutes from './routes/users.js';
 
@@ -8,8 +8,9 @@ const PORT = 5000;
 app.use(bodyParser.json());
 
 
-app.use('/', usersRoutes)
+app.use('/users', usersRoutes);
 
-app.get('/', (req, res) => res.send('Hello from hompage.'));
+app.get('/', (req, res) => res.send('hello from homepage.'));
 
+ 
 app.listen(PORT, () => console.log(`server running on port: http://localhost:${PORT}`))
